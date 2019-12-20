@@ -1,0 +1,79 @@
+<div class="container">
+<div class="alert alert-warning" *ngIf="(submitted || email.touched) && email.invalid">Enter correct email address</div>
+<div class="alert alert-warning" *ngIf="(submitted || password.touched) && password.invalid">Enter correct password</div>
+<div class="limiter">
+    <div>
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="assets/img/chef_logo.jpg" alt="IMG">
+            </div>
+
+            <form class="login100-form" (ngSubmit)="!loginForm.invalid && onLogin(loginForm,user)"  #loginForm="ngForm">
+                <span class="login100-form-title">
+                    <h1>Admin Login</h1>
+                </span>
+
+                <div class="row">
+                    <div class="col-12">
+                      <div class="form-group" [ngClass]="((submitted || email.touched) && email.invalid)?'has-danger':''">
+                          <input class='form-control' type="text" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"  
+                          [(ngModel)]="user.email"   placeholder="Please enter your emailId address" id="email" required #email="ngModel" />
+                      </div>
+                      <div class="alert alert-warning" *ngIf="(submitted || email.touched) && email.invalid">Enter correct email address</div>
+                    </div>
+                  </div>           
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group" [ngClass]="((submitted || password.touched) && password.invalid)?'has-danger':''">
+                        <input class='form-control' type="password" name="password" [(ngModel)]="user.password"   placeholder="Please Enter your Password" id="password" required #password="ngModel">
+                      </div> 
+                      <div class="alert alert-warning" *ngIf="(submitted || password.touched) && password.invalid">Enter correct password</div>   
+                    </div>
+                  </div>  
+                  <div class="row">
+                      <div class="col-md-6 col-sm-6">
+                
+                      </div>
+                      <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                          <div class="forgotlink">
+                            <a href="javascript:;" class="text-link" (click)='showForgotPassword()'>Forgot password?</a>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form-group text-center">
+                        <button class='btn btn-primary xxs-btnblock' type="submit">Login</button>
+                      </div>    
+                    </div>
+                  </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- <div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <form>
+            <div>
+                <h2>Admin Login</h2>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="text" placeholder="Please enter your emailId address" id="email" required>
+                </div>
+                <div class="col-12">
+                    <input type="password" placeholder="Please enter your emailId address" id="password" required>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-success">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
