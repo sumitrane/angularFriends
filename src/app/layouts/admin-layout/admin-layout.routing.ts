@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { UserComponent } from '../../main/user/user.component';
 import { ChefComponent } from '../../main/chef/chef.component';
+import { TermsAndConditionsComponent } from 'app/main/terms-and-conditions/terms-and-conditions.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -54,9 +55,11 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: '',               component: DashboardComponent},
-    { path: 'user',               component: UserComponent},
-    { path: 'chef',               component: ChefComponent},
+    { path: '',                     component: DashboardComponent},
+    { path: 'user',                 component: UserComponent},
+    { path: 'chef',                 component: ChefComponent},
+    { path: 'termsandconditions',   component: TermsAndConditionsComponent},
+    
 
 
     { path: 'dashboard',      component: DashboardComponent},

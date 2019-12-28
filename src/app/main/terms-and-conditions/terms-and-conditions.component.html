@@ -1,0 +1,27 @@
+
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 bg-white" *ngIf="isEdit">
+        <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="editor"><h3>Editor</h3></label>
+
+              <quill-editor [styles]="{height: '300px'}" formControlName="editor"></quill-editor>
+
+              <!-- <input type="submit" btn btn-primary btn-success mt-5 value="Submit"/> -->
+              <button type="submit" class="btn btn-primary btn-success mt-5" value="Submit">Submit</button>
+              <button type="button" class="btn btn-primary mt-5"(click)=cancel()>Cancel</button>
+          </div>
+        </form>
+      </div>
+    <div><hr></div>
+      <div class="col-md-12 bg-white" *ngIf="isOutput">
+        <button class="btn btn-primary btn-success mt-5" (click)=editMode()>Edit</button>
+        <h3>output</h3>
+        <!-- <p class="mt-5" [innerHTML]="editorContent"></p> -->
+        <quill-view-html class="mt-5" [content]="editorContent" theme="snow"></quill-view-html>
+      </div>
+     </div>
+  </div>
+</div>

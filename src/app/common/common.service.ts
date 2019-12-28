@@ -46,6 +46,7 @@ export class CommonService {
 						}
 	/*****************************************************************************************/
 	callApi(url, data, method,isForm?, isPublic?): Promise<any> {
+		console.log(this._apiUrl);
 		let headers;
 		if(isPublic){
 			headers = headers = new HttpHeaders({ 'content-Type': 'application/json'});

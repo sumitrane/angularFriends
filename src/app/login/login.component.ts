@@ -25,7 +25,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
     console.log(loginForm);
     console.log(user.email);
     console.log(user.password);
-    if(user.email=="sumit.rane2009@gmail.com" && user.password=="123"){
+    if(user.email=="abc@gmail.com" && user.password=="123"){
       console.log("sucess");
       this.popToast("success","login");
       this.router.navigate(["/main/dashboard"]);
