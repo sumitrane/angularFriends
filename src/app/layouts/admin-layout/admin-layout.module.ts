@@ -15,12 +15,14 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 
 // my imports during development
-import { MatTableModule, MatSortModule, MatPaginatorModule } from '@angular/material';
+import { MatTableModule, MatSortModule, MatPaginatorModule, MatSlideToggleModule } from '@angular/material';
 import { QuillModule } from 'ngx-quill';
 // my imports for components
 import { UserComponent } from '../../main/user/user.component';
 import { ChefComponent } from '../../main/chef/chef.component';
 import { TermsAndConditionsComponent } from '../../main/terms-and-conditions/terms-and-conditions.component';
+import { UserListComponent } from 'app/main/user/user-list/user-list.component';
+import { UserDetailComponent } from 'app/main/user/user-detail/user-detail.component';
 
 
 import {
@@ -31,6 +33,8 @@ import {
   MatTooltipModule,
   MatSelectModule
 } from '@angular/material';
+import { AdminDashboardComponent } from 'app/main/admin-dashboard/admin-dashboard.component';
+
 
 @NgModule({
   imports: [
@@ -47,6 +51,7 @@ import {
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatSlideToggleModule,
     QuillModule.forRoot(),
   ],
   declarations: [
@@ -61,6 +66,10 @@ import {
     UserComponent,
     ChefComponent,
     TermsAndConditionsComponent,
+    UserListComponent,
+    UserDetailComponent,
+    AdminDashboardComponent,
+
   ]
 })
 

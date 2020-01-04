@@ -11,6 +11,9 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { UserComponent } from '../../main/user/user.component';
 import { ChefComponent } from '../../main/chef/chef.component';
 import { TermsAndConditionsComponent } from 'app/main/terms-and-conditions/terms-and-conditions.component';
+import { UserListComponent } from 'app/main/user/user-list/user-list.component';
+import { UserDetailComponent } from 'app/main/user/user-detail/user-detail.component';
+import { AdminDashboardComponent } from 'app/main/admin-dashboard/admin-dashboard.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -55,8 +58,15 @@ export const AdminLayoutRoutes: Routes = [
     //         component: UpgradeComponent
     //     }]
     // }
-    { path: '',                     component: DashboardComponent},
-    { path: 'user',                 component: UserComponent},
+    { path: '',                     component: AdminDashboardComponent },
+    { path: 'admin-dashboard',      component: AdminDashboardComponent },
+    { path: 'user',                 component: UserComponent,
+        children: [
+            { path: "", redirectTo: "user-list", pathMatch: "full" },
+            { path: "user-list", component: UserListComponent, pathMatch: "full"},
+            { path: "user-detail/:id", component: UserDetailComponent, pathMatch: "full"}
+        ]
+    },
     { path: 'chef',                 component: ChefComponent},
     { path: 'termsandconditions',   component: TermsAndConditionsComponent},
     

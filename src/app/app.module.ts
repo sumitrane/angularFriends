@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -30,6 +30,7 @@ import { from } from 'rxjs';
 
 
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -40,6 +41,7 @@ import { from } from 'rxjs';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    AngularFontAwesomeModule,
     QuillModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'

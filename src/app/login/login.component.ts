@@ -28,7 +28,7 @@ export class LoginComponent extends BaseComponent implements OnInit {
     if(user.email=="abc@gmail.com" && user.password=="123"){
       console.log("sucess");
       this.popToast("success","login");
-      this.router.navigate(["/main/dashboard"]);
+      this.router.navigate(["/main/admin-dashboard"]);
     }
     else{
          this.popToast('error','Please provide complete information.')

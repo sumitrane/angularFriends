@@ -15,11 +15,13 @@ export class CommonService {
   constructor(
     public _http:HttpClient
   ) {
-    this._apiUrl = this.config.config.apiUrl
+	this._apiUrl = this.config.config.apiUrl
+	this._termapiUrl = this.config.config.termapiUrl
    }
 
   public config = (<any>config);
   public _apiUrl;
+  public _termapiUrl;
 
 
   public getToken(key){
@@ -114,5 +116,34 @@ export class CommonService {
         })
 	}
 	/****************************************************************************/
+
+	callApiForHtml(url, data, method,isForm?, isPublic?): Promise<any> {
+		console.log(this._termapiUrl);
+		let headers;
+		if(isPublic){
+			headers = headers = new HttpHeaders({ 'content-Type': 'text/html; charset=UTF-8'});
+		}else{
+			headers = new HttpHeaders({ 'content-Type': 'application/json', 'Authorization': this.getToken('accessToken')});
+		}
+		if(isForm){
+			//headers = new HttpHeaders({ 'Authorization': this.getToken('accessToken') });
+			headers = new HttpHeaders({ 'Authorization': 'Basic '+ window.btoa('sumit' + ':' + 'password') });
+		}
+		return new Promise((resolve, reject) => {
+			if(method == 'post'){
+				this._http.post(this._termapiUrl + url, data, { headers, responseType: 'text' })
+				.subscribe(data => { resolve(data) }, error => { this.showServerError(error)})
+			}else if(method == 'get'){
+				// let params: { appid: 'id1234', cnt: '5' }
+				this._http.get(this._termapiUrl + url, { headers, responseType: 'text' })
+				.subscribe(data => { resolve(data) }, error => { this.showServerError(error)})
+			}else if (method === 'put') {
+
+				this._http.put(this._termapiUrl + url, data, { headers, responseType: 'text' })
+				.subscribe(data => { resolve(data) }, error => { this.showServerError(error)})
+			}
+		})
+	}
+
 
 }
