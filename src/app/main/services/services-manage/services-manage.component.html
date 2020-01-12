@@ -1,0 +1,50 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Add/Edit Services</h4>
+                      <p class="card-category">Complete service info</p>
+                  </div>
+                  <div class="card-body">
+
+
+                    <form #userForm='ngForm' (ngSubmit)='submitForm(user)'>
+ 
+                      <div class="form-group row">
+                        <label class="col-xl-4 col-lg-4 col-form-label">Last Name</label>
+                        <div class="col-xl-4 col-lg-4" >
+                          <input class='form-control' type="text" name="lastName" [(ngModel)]="user.lastName"  placeholder="Please Enter Last Name" id="lastName" required #lastName="ngModel">
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label class="col-xl-4 col-lg-4 col-form-label">Email Id</label>
+                        <div class="col-xl-4 col-lg-4" >
+                          <input class='form-control' type="text" name="emailId" [(ngModel)]="user.emailId"  placeholder="Please Enter Email Id" id="emailId" required #emailId="ngModel">
+                        </div>
+                      </div>
+
+                      
+                      <!-- <div class="form-group row">
+                        <label class="col-xl-4 col-lg-4 col-form-label">Image</label>
+                        <div class="col-xl-4 col-lg-4" >
+                          <input class='form-control' type="file" name="emailId" placeholder="Please Enter Email Id" id="emailId" required #emailId="ngModel">
+                        </div>
+                      </div> -->
+
+                      <div class="button-group text-right">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-secondary" [routerLink]="['/main/category/category-list']">Cancel</button>
+                      </div>
+                      
+                      
+
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

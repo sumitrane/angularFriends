@@ -15,15 +15,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 
 // my imports during development
-import { MatTableModule, MatSortModule, MatPaginatorModule, MatSlideToggleModule } from '@angular/material';
 import { QuillModule } from 'ngx-quill';
-// my imports for components
-import { UserComponent } from '../../main/user/user.component';
-import { ChefComponent } from '../../main/chef/chef.component';
-import { TermsAndConditionsComponent } from '../../main/terms-and-conditions/terms-and-conditions.component';
-import { UserListComponent } from 'app/main/user/user-list/user-list.component';
-import { UserDetailComponent } from 'app/main/user/user-detail/user-detail.component';
-
 
 import {
   MatButtonModule,
@@ -31,9 +23,34 @@ import {
   MatRippleModule,
   MatFormFieldModule,
   MatTooltipModule,
-  MatSelectModule
+  MatSelectModule,
+  MatTableModule,
+  MatSortModule,
+  MatPaginatorModule,
+  MatSlideToggleModule 
 } from '@angular/material';
+
+// my imports for components
 import { AdminDashboardComponent } from 'app/main/admin-dashboard/admin-dashboard.component';
+import { UserComponent } from '../../main/user/user.component';
+import { ChefComponent } from '../../main/chef/chef.component';
+import { TermsAndConditionsComponent } from '../../main/terms-and-conditions/terms-and-conditions.component';
+import { UserListComponent } from 'app/main/user/user-list/user-list.component';
+import { UserDetailComponent } from 'app/main/user/user-detail/user-detail.component';
+import { UserEditComponent } from 'app/main/user/user-edit/user-edit.component';
+import { QuestionnairesComponent } from 'app/main/questionnaires/questionnaires.component';
+import { QuestionnairesListComponent } from 'app/main/questionnaires/questionnaires-list/questionnaires-list.component';
+import { QuestionnairesManageComponent } from 'app/main/questionnaires/questionnaires-manage/questionnaires-manage.component';
+import { ChefListComponent } from 'app/main/chef/chef-list/chef-list.component';
+import { ChefDetailComponent } from 'app/main/chef/chef-detail/chef-detail.component';
+import { CategoryComponent } from 'app/main/category/category.component';
+import { CategoryListComponent } from 'app/main/category/category-list/category-list.component';
+import { CategoryManageComponent } from 'app/main/category/category-manage/category-manage.component';
+import { ServicesComponent } from 'app/main/services/services.component';
+import { ServicesListComponent } from 'app/main/services/services-list/services-list.component';
+import { ServicesManageComponent } from 'app/main/services/services-manage/services-manage.component';
+
+
 
 
 @NgModule({
@@ -63,12 +80,25 @@ import { AdminDashboardComponent } from 'app/main/admin-dashboard/admin-dashboar
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+
+    AdminDashboardComponent,
     UserComponent,
-    ChefComponent,
-    TermsAndConditionsComponent,
     UserListComponent,
     UserDetailComponent,
-    AdminDashboardComponent,
+    ChefComponent,
+    ChefListComponent,
+    ChefDetailComponent,
+    TermsAndConditionsComponent,
+    UserEditComponent,
+    QuestionnairesComponent,
+    QuestionnairesListComponent,
+    QuestionnairesManageComponent,
+    CategoryComponent,
+    CategoryListComponent,
+    CategoryManageComponent,
+    ServicesComponent,
+    ServicesListComponent,
+    ServicesManageComponent,
 
   ]
 })

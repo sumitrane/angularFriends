@@ -1,0 +1,91 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit User Profile</h4>
+                      <p class="card-category">Complete user profile</p>
+                  </div>
+                  <div class="card-body">
+
+
+                    <form #userForm='ngForm' (ngSubmit)='submitForm(user)'>
+
+                        <div class="form-group row">
+                          <label class="col-xl-4 col-lg-4 col-form-label">First Name</label>
+                          <div class="col-xl-4 col-lg-4" >
+                            <input class='form-control' type="text" name="firstName" [(ngModel)]="user.firstName"  placeholder="Please Enter First Name" id="firstName" required #firstName="ngModel">
+                          </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                          <label class="col-xl-4 col-lg-4 col-form-label">Middle Name</label>
+                          <div class="col-xl-4 col-lg-4" >
+                            <input class='form-control' type="text" name="middleName" [(ngModel)]="user.middleName"  placeholder="Please Enter Middle Name" id="middleName" #middleName="ngModel">
+                          </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                          <label class="col-xl-4 col-lg-4 col-form-label">Last Name</label>
+                          <div class="col-xl-4 col-lg-4" >
+                            <input class='form-control' type="text" name="lastName" [(ngModel)]="user.lastName"  placeholder="Please Enter Last Name" id="lastName" required #lastName="ngModel">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-xl-4 col-lg-4 col-form-label">Email Id</label>
+                          <div class="col-xl-4 col-lg-4" >
+                            <input class='form-control' type="text" name="emailId" [(ngModel)]="user.emailId"  placeholder="Please Enter Email Id" id="emailId" required #emailId="ngModel">
+                          </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                          <label class="col-xl-4 col-lg-4 col-form-label">Contact Number</label>
+                          <div class="col-xl-4 col-lg-4" >
+                            <input class='form-control' type="text" name="contactNumber" [(ngModel)]="user.contactNumber"  placeholder="Please Enter Contact Number" id="contactNumber" required #contactNumber="ngModel">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-xl-4 col-lg-4 col-form-label">Status</label>
+                          <div class="col-xl-4 col-lg-4" >
+                            <label class="radio-inline">
+                              <input class='form-control' type="radio" value="ACTIVE" name="activeStatus" [(ngModel)]="user.status" id="status" required #status="ngModel">
+                              <span>Active</span>
+                            </label>&nbsp;&nbsp;
+                            <label class="radio-inline">
+                              <input class='form-control' type="radio" value="INACTIVE" name="inactiveStatus" [(ngModel)]="user.status" id="status" required #status="ngModel">
+                              <span>Inactive</span>                            
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-xl-4 col-lg-4 col-form-label">Devices</label>
+                          <div class="col-xl-4 col-lg-4" >
+                            <input class='form-control' type="text" name="devices" [(ngModel)]="user.devices"  placeholder="Please Enter Devices" id="devices" required #devices="ngModel">
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-xl-4 col-lg-4 col-form-label">Addresses</label>
+                          <div class="col-xl-4 col-lg-4" >
+                            <input class='form-control' type="text" name="addresses" [(ngModel)]="user.addresses"  placeholder="Please Enter Addresses" id="addresses" required #addresses="ngModel">
+                          </div>
+                        </div>
+                        
+                        <div class="button-group text-right">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button type="button" class="btn btn-secondary" [routerLink]="['/main/user/user-list']">Cancel</button>
+                        </div>
+                        
+                    </form>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

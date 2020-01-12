@@ -9,16 +9,14 @@ declare interface RouteInfo {
 }
 export const ROUTES: RouteInfo[] = [
     { path: 'admin-dashboard', title: 'Admin Dashboard',  icon: 'dashboard', class: '' },
-    { path: 'user', title: 'User List',  icon:'person', class: '' },
-    { path: 'chef', title: 'Chef List',  icon:'person', class: '' },
+    { path: 'users', title: 'User List',  icon:'person', class: '' },
+    { path: 'chefs', title: 'Chef List',  icon:'person', class: '' },
+    { path: 'category', title: 'Category List',  icon:'list_alt', class: '' },
+    { path: 'services', title: 'Services List',  icon:'list_alt', class: '' },
     { path: 'termsandconditions', title: 'Manage Terms & Conditions',  icon:'info', class: '' },
-    // { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    // { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    // { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    // { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    // { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    // { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    // { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+    { path: 'questionnaires', title: 'Manage Questionnaires',  icon:'live_help', class: '' },
+
+
 ];
 
 @Component({
